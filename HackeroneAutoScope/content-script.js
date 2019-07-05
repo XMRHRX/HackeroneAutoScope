@@ -43,7 +43,8 @@ String.prototype.replaceAll = function(search, replace)
         return this.toString();
     }
 
-    return this.replace(new RegExp('[' + search + ']', 'g'), replace);
+    return this.replace(new RegExp(search , 'g'), replace);
+    //return this.replace(search,replace);
 };
 function toArray(str)
 {
@@ -59,8 +60,12 @@ function toArray(str)
     }
     else if(storeNext==true)
     {
-      item=item.replaceAll(".","\\.");
-      item=item.replaceAll("*",".*");
+      //alert(item);
+      item=item.replaceAll("\\.","#");
+      item=item.replaceAll("\\*",".*");
+      item=item.replaceAll("http(s)?://","");
+      item=item.replaceAll("#","\\\\.");
+      //alert(item);
       storeNext=false;
       _arr.push(item);
     }
