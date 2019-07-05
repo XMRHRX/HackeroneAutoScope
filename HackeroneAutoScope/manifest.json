@@ -1,0 +1,30 @@
+{
+
+  "manifest_version": 2,
+  "name": "HackeroneScope",
+  "version": "1.0",
+
+  "description": "Use it under hackerone.com/<some bounty program>.it will show the In scope and Out of scope with json format. Save it and load it in burpsuite scope",
+
+  "icons": {
+    "48": "icons/HackeroneScope48.png"
+  },
+  "content_scripts": [{
+    "matches": ["*://hackerone.com/*"],
+    "js": ["content-script.js"]
+  }],
+  
+  "browser_action": {
+    "default_icon": "icons/HackeroneScope48.png"
+  },
+  "background": {
+        "scripts": ["background-script.js"]
+    },
+	"permissions": [
+		"*://hackerone.com/*",
+		"webRequest",
+		"tabs"
+]
+	
+  
+}
