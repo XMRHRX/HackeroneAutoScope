@@ -1,2 +1,2 @@
 # HackeroneAutoScope
-Create the Scope setting for burpsuite.
+A firefox add-on.Create the Scope setting for burpsuite.
